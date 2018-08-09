@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+#gem 'rails', '5.2.1'
+gem 'rails'
 # gem 'rack', '1.4.5'
 # gem 'iconv'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 ##cache
-
 
 gem "memcache-client", "~> 1.8.5"
 # Google analytics
@@ -14,8 +14,8 @@ gem 'gattica', :path => 'vendor/gems/gattica-0.6.1'
 # gem 'gattica', :path => 'vendor/gems/gattica'
 # gem 'gattica', :git => 'git://github.com/chrisle/gattica.git'
 
-gem 'sqlite3'
-gem 'mysql2'
+#gem 'sqlite3'
+gem "mysql2", "~> 0.3.20"
 
 #reader excel
 gem 'iconv'

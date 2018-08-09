@@ -1,0 +1,19 @@
+FROM python:2.7-jessie
+
+MAINTAINER Sergio Rodríguez <sergio.rdzsg@gmail.com>
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && git clone https://github.com/lanacioncom/ddjj_admin_lanacion.git ddjj_admin \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /ddjj_admin
+
+COPY local_settings.py.example admin_ddjj/local_settings.py
+
+RUN pip install -r requirements.txt \
+    && python manage.py migrate
+
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
