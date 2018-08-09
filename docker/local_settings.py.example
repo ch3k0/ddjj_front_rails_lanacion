@@ -19,7 +19,7 @@ DATABASES = {
         'NAME': 'ddjj',
         'USER': "root",
         'PASSWORD': "toor",
-        'HOST': "ddjj_db",
+        'HOST': "db",
     }
 }
 

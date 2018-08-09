@@ -10,7 +10,7 @@ development:
   pool: 5
   timeout: 5000
   database: ddjj
-  host: ddjj_db
+  host: db
   username: root
   password: toor
 

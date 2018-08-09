@@ -14,7 +14,7 @@ gem 'gattica', :path => 'vendor/gems/gattica-0.6.1'
 # gem 'gattica', :path => 'vendor/gems/gattica'
 # gem 'gattica', :git => 'git://github.com/chrisle/gattica.git'
 
-#gem 'sqlite3'
+gem 'sqlite3'
 gem "mysql2", "~> 0.3.20"
 
 #reader excel
