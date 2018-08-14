@@ -17,6 +17,6 @@ COPY basic_authenticate.rb.example config/initializers/basic_authenticate.rb
 
 RUN bundle install
 
-EXPOSE 30005
+EXPOSE 5000
 
 CMD ["rails", "s"]
