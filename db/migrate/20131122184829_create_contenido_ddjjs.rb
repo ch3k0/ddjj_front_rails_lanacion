@@ -1,6 +1,7 @@
 class CreateContenidoDdjjs < ActiveRecord::Migration
   def change
-    create_table :contenido_ddjjs do |t|
+    #create_table :contenido_ddjjs do |t|
+    create_table(:contenido_ddjjs, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.integer :ddjj_id
       t.string :ddjj_ano
       t.string :ddjj_tipo

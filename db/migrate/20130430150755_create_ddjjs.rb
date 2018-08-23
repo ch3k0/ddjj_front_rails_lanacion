@@ -1,6 +1,8 @@
 class CreateDdjjs < ActiveRecord::Migration
   def change
-    create_table :ddjjs do |t|
+
+    #create_table :ddjjs do |t|
+    create_table(:ddjjs, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.integer :ano
       t.integer :tipo_ddjj_id
       t.string  :funcionario

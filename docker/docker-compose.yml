@@ -47,16 +47,20 @@ version: '3'
 
 services:
   db:
-    # container_name: ddjj_db
-    image: mysql:56
+    container_name: mysql
+    image: mysql:5.6
     # ports:
     #   - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD= toor
-      - MYSQL_DATABASE = ddjj
+     - MYSQL_ROOT_PASSWORD=toor
+     - MYSQL_DATABASE=ddjj
     # volumes:
-    #   - /Users/Adam/Development/data/mysql:/var/lib/mysql
+    #   - mysql:/var/lib/mysql
+    # depends_on:
+    #   - django
+    #   - rails
   django:
+    container_name: django
     build:
       context: .
       dockerfile: ddjj_admin
@@ -65,10 +69,12 @@ services:
     #   - .:/code
     ports:
       - "8000:8000"
+    links:
+      - db
     depends_on:
       - db
   rails:
-    # container_name: ddjj_rails
+    container_name: rails
     build:
       context: .
       dockerfile: Dockerfile
@@ -81,5 +87,7 @@ services:
       - "5000:5000"
     links:
       - db
-    # environment:
-    #   - DATABASE_URL=mysql://root:itsasecret@db:3306/docker_tutorial_django_db
+    depends_on:
+      - db
+    environment:
+     - DATABASE_URL=mysql://root:toor@db:3306/ddjj

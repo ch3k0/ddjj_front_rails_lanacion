@@ -1,6 +1,7 @@
 class CreateCargos < ActiveRecord::Migration
   def change
-    create_table :cargos do |t|
+    #create_table :cargos do |t|
+    create_table(:cargos, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.string :jurisdiccion
       t.string :cargo
       t.integer :poder_id

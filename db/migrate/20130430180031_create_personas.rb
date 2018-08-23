@@ -1,6 +1,7 @@
 class CreatePersonas < ActiveRecord::Migration
   def change
-    create_table :personas do |t|
+    #create_table :personas do |t|
+    create_table(:personas, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.string :apellido
       t.string :nombre
       t.string :legajo

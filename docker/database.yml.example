@@ -11,8 +11,8 @@ development:
   timeout: 5000
   database: ddjj
   host: db
-  username: root
-  password: toor
+  username: ddjj
+  password: password
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,6 +29,6 @@ production:
   pool: 5
   timeout: 5000
   host: localhost
-  database: declaracionesjuradas_production
-  username: declarajuradas
-  password: xxxxx
+  database: ddjj
+  username: root
+  password: toor

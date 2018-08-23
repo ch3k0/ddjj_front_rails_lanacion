@@ -6,6 +6,8 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends build-essential git \
   libxapian-dev libxapian22v5 uuid-dev ruby rails \
   zlib1g-dev ruby-dev libmysqlclient-dev libsqlite3-dev\
+  && gem update --system \
+  && gem install rails \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && git clone https://github.com/ch3k0/ddjj_front_rails_lanacion.git ddjj
 

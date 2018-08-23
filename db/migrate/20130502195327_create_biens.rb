@@ -1,6 +1,7 @@
 class CreateBiens < ActiveRecord::Migration
   def change
-    create_table :biens do |t|
+    #create_table :biens do |t|
+    create_table(:biens, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.integer :tipo_bien_id
       t.integer :nombre_bien_id
       t.string :tipo_bien_s
