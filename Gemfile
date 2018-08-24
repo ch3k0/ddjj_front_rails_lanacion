@@ -16,6 +16,7 @@ gem 'gattica', :path => 'vendor/gems/gattica-0.6.1'
 
 #gem 'sqlite3'
 gem "mysql2", "~> 0.3.20"
+gem "activerecord-mysql-adapter"
 
 #reader excel
 gem 'iconv'

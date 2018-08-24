@@ -1,72 +1,19 @@
-# version: "2"
-# services:
-#   db:
-#     container_name: ddjj_db
-#     image: mysql:56
-#     ports:
-#       - "3306:3306"
-#     environment:
-#       - MYSQL_ROOT_PASSWORD= toor
-#       - MYSQL_DATABASE = ddjj
-#     # volumes:
-#     #   - /Users/Adam/Development/data/mysql:/var/lib/mysql
-#   django:
-#     container_name: ddjj_django
-#     build:
-#       context: .
-#       dockerfile: ddjj_admin
-#     # image: docker_tutorial_django
-#     stdin_open: true
-#     tty: true
-#     # volumes:
-#     #   - .:/var/www/myproject
-#     ports:
-#       - "8000:8000"
-#     links:
-#       - db
-#     # environment:
-#     #   - DATABASE_URL=mysql://root:itsasecret@db:3306/docker_tutorial_django_db
-#   rails:
-#     container_name: ddjj_rails
-#     build:
-#       context: .
-#       dockerfile: Dockerfile
-#     # image: docker_tutorial_django
-#     stdin_open: true
-#     tty: true
-#     # volumes:
-#     #   - .:/var/www/myproject
-#     ports:
-#       - "5000:5000"
-#     links:
-#       - db
-#     # environment:
-#     #   - DATABASE_URL=mysql://root:itsasecret@db:3306/docker_tutorial_django_db
-
 version: '3'
 
 services:
   db:
-    container_name: mysql
-    image: mysql:5.6
-    # ports:
-    #   - "3306:3306"
+    container_name: mariadb
+    image: mariadb:10.1.35
     environment:
      - MYSQL_ROOT_PASSWORD=toor
      - MYSQL_DATABASE=ddjj
     # volumes:
     #   - mysql:/var/lib/mysql
-    # depends_on:
-    #   - django
-    #   - rails
   django:
     container_name: django
     build:
       context: .
       dockerfile: ddjj_admin
-    # command: python3 manage.py runserver 0.0.0.0:8000
-    # volumes:
-    #   - .:/code
     ports:
       - "8000:8000"
     links:
@@ -78,16 +25,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # image: docker_tutorial_django
     stdin_open: true
     tty: true
-    # volumes:
-    #   - .:/var/www/myproject
     ports:
-      - "5000:5000"
+      - "5000:3000"
     links:
       - db
     depends_on:
       - db
-    environment:
-     - DATABASE_URL=mysql://root:toor@db:3306/ddjj
