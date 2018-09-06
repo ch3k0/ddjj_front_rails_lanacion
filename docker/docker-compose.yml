@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: ddjj_admin
     ports:
-      - "8000:8000"
+      - "6000:8000"
     links:
       - db
     depends_on:
@@ -28,7 +28,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - "5000:3000"
+      - "7000:3000"
     links:
       - db
     depends_on:
