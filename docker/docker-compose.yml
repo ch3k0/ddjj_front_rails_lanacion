@@ -2,7 +2,6 @@ version: '3'
 
 services:
   db:
-    container_name: mariadb
     image: mariadb:10.1.35
     environment:
      - MYSQL_ROOT_PASSWORD=toor
@@ -10,7 +9,6 @@ services:
     # volumes:
     #   - mysql:/var/lib/mysql
   django:
-    container_name: django
     build:
       context: .
       dockerfile: ddjj_admin
@@ -21,7 +19,6 @@ services:
     depends_on:
       - db
   rails:
-    container_name: rails
     build:
       context: .
       dockerfile: Dockerfile
